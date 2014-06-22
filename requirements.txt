@@ -1,2 +1,3 @@
 https://github.com/django/django/archive/stable/1.7.x.zip
 selenium
+gunicorn
