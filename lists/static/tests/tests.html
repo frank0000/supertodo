@@ -12,6 +12,7 @@
         <form>
 	    <input name="text"/>
 	    <div class="has-error">Error text</div>
+	    <input name="wahoo"/>
         </form>
     </div>
     <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -20,12 +21,14 @@
     <script>
 /* global $, test, equal */ 
 
-test("errors should be hidden on keypress", function () {
-  $('input').trigger('keypress');
+test("errors should be hidden on keypress in text field", function () {
+  $("input[name='text']").trigger('keypress');
   equal($('.has-error').is(':visible'), false); // 
 }); 
 
-test("errors not to be hidden unless keypress", function () {
+test("errors not to be hidden unless keypress in text field", function () {
+  equal($('.has-error').is(':visible'), true); // 
+  $("input[name='wahoo']").trigger('keypress');
   equal($('.has-error').is(':visible'), true); // 
 }); 
 
