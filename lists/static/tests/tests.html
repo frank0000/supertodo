@@ -3,34 +3,32 @@
 <head>
     <meta charset="utf-8">
     <title>Javascript tests</title>
-    <link rel="stylesheet" href="qunit.css">
+    <link rel="stylesheet" href="../../../superlists/static/tests/qunit.css">
 </head>
 
 <body>
     <div id="qunit"></div>
     <div id="qunit-fixture">
         <form>
-	    <input name="text"/>
-	    <div class="has-error">Error text</div>
-	    <input name="wahoo"/>
+            <input name="text" />
+            <div class="has-error">Error text</div>
         </form>
     </div>
+
     <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="qunit.js"></script>
+    <script src="../../../superlists/static/tests/qunit.js"></script>
     <script src="../list.js"></script>
     <script>
-/* global $, test, equal */ 
+/*global $, test, equal */
 
-test("errors should be hidden on keypress in text field", function () {
-  $("input[name='text']").trigger('keypress');
-  equal($('.has-error').is(':visible'), false); // 
-}); 
+test("errors should be hidden on keypress", function () {
+    $('input').trigger('keypress');
+    equal($('.has-error').is(':visible'), false); 
+});
 
-test("errors not to be hidden unless keypress in text field", function () {
-  equal($('.has-error').is(':visible'), true); // 
-  $("input[name='wahoo']").trigger('keypress');
-  equal($('.has-error').is(':visible'), true); // 
-}); 
+test("errors not be hidden unless there is a keypress", function () {
+    equal($('.has-error').is(':visible'), true);
+});
 
     </script>
 
