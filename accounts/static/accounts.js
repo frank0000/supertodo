@@ -16,7 +16,7 @@ var initialize = function (navigator, user, token, urls) {
                 .done(function () { console.log('DONE'); window.location.reload(); })
                 .fail(function () { console.log('FAIL'); navigator.id.logout(); });
         },
-        onlogout: function () {}
+        onlogout: function () {console.log('onlogout')}
     });
 };
 
