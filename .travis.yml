@@ -6,8 +6,5 @@ python:
 install:
   - "pip install -r requirements.txt"
 
-before_script:
-  - "python3 manage.py migrate --noinput"
-
 script:
-  - "python3 manage.py test"
+  - "python manage.py test"
