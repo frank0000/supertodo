@@ -11,6 +11,6 @@ install:
   - "pip install -r requirements.txt"
 
 script:
+  - "phantomjs superlists/static/tests/runner.js lists/static/tests/tests.html"
   - "python manage.py test lists accounts"
   - "python manage.py test functional_tests"
-  - "phantomjs superlists/static/tests/testrunner.js lists/static/tests/tests.html"
