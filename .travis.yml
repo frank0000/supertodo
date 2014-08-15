@@ -13,3 +13,4 @@ install:
 script:
   - "python manage.py test lists accounts"
   - "python manage.py test functional_tests"
+  - "phantomjs testrunner.js lists/static/tests/tests.html"
